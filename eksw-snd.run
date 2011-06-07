@@ -1,0 +1,31 @@
+#!/bin/sh
+# eksw-snd.run
+
+rm -f debug.log
+rm -f debug.snd
+
+while [ 1 ]
+do
+	date
+
+	rm -f ../tmp/snd snd
+	cp sndrcvfile snd
+
+	eksw /dev/ttyR7 9600 -w 20 -l 150 -d -d -s snd
+	if [ $? -ne 0 ]
+	then
+		echo "eksw snd failed"
+		exit
+	fi
+
+	cmp ../tmp/snd snd
+	if [ $? -ne 0 ]
+	then
+		echo "cmp snd failed"
+		exit
+	fi
+
+	cat debug.log >> debug.snd
+	rm -f debug.log
+
+done

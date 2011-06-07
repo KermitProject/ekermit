@@ -1,0 +1,31 @@
+#!/bin/sh
+# eksw-rcv.run
+
+rm -f debug.log
+rm -f debug.rcv
+
+while [ 1 ]
+do
+	date
+
+	rm -f ../tmp/rcv rcv
+	cp sndrcvfile ../tmp/rcv
+
+	eksw /dev/ttyR7 9600 -w 20 -l 150 -d -d -g rcv
+	if [ $? -ne 0 ]
+	then
+		echo "eksw rcv failed"
+		exit
+	fi
+
+	cmp ../tmp/rcv rcv
+	if [ $? -ne 0 ]
+	then
+		echo "cmp rcv failed"
+		exit
+	fi
+
+	cat debug.log >> debug.rcv
+	rm -f debug.log
+
+done
