@@ -1,5 +1,0 @@
-#!/bin/sh
-
-indent -i3 -bli0 -nut \
-	kermit.c unixio.c main.c \
-	cdefs.h  debug.h  kermit.h  platform.h  unix.h

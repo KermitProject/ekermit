@@ -7,23 +7,22 @@
   To have them declared static, define STATIC=static on the cc
   command line.
 */
-#ifdef MY_DEFS                  // HiTech's XAC cmd line is small
+#ifdef XAC  /* HiTech's XAC cmd line is small */
 #define STATIC static
-#else // MY_DEFS
+#else /* XAC */
 #ifndef STATIC
 #define STATIC
 #endif /* STATIC */
-#endif // MY_DEFS
+#endif	/* XAC */
 
 /*
   By default we assume the compiler supports unsigned char and
   unsigned long.  If not you can override these definitions on
   the cc command line.
-  Added unsigned short.
 */
 #ifndef HAVE_UCHAR
 typedef unsigned char UCHAR;
-#endif /* HAVE_UCHAR */
+#endif /* HAVE_UCHARE */
 #ifndef HAVE_ULONG
 typedef unsigned long ULONG;
 #endif /* HAVE_ULONG */
