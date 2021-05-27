@@ -1,6 +1,6 @@
 #Makefile for embedded Kermit.
 #
-# Copyright (C) 1995, 2011,
+# Copyright (C) 1995, 2021,
 #  Trustees of Columbia University in the City of New York.
 #  All Rights Reserved.  See kermit.c for license.
 

@@ -1,8 +1,8 @@
 #define KERMIT_C
 /*
   Embedded Kermit protocol module
-  Version: 1.7
-  Most Recent Update: Mon Jun  6 15:36:26 2011
+  Version: 1.8
+  Most Recent Update: Tue May 25 19:20:27 2021
 
   No stdio or other runtime library calls, no system calls, no system
   includes, no static data, and no global variables in this module.
@@ -18,7 +18,7 @@
 
   Author: Frank da Cruz.
 
-  Copyright (C) 1995, 2011,
+  Copyright (C) 1995, 2021,
   Trustees of Columbia University in the City of New York.
   All rights reserved.
 

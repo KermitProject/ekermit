@@ -1,7 +1,7 @@
 #ifndef __KERMIT_H__
 #define __KERMIT_H__
 
-#define VERSION "1.7"			/* Kermit module version number */
+#define VERSION "1.8"			/* Kermit module version number */
 
 /*
   kermit.h -- Symbol and struct definitions for embedded Kermit.
@@ -12,7 +12,7 @@
 
   Author: Frank da Cruz.
 
-  Copyright (C) 1995, 2011,
+  Copyright (C) 1995, 2021,
   Trustees of Columbia University in the City of New York.
   All rights reserved.
 
@@ -213,8 +213,8 @@
 
 /* File Transfer Modes */
 
-#define BINARY      0
-#define TEXT        1
+#define BINARY      1                   /* Corrected in E-Kermit 1.8 */
+#define TEXT        0                   /* Corrected in E-Kermit 1.8 */
 
 /* Parity values */
 

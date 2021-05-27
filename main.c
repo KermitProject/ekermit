@@ -2,7 +2,7 @@
 
 /*
   Author: Frank da Cruz, the Kermit Project, Columbia University, New York.
-  Copyright (C) 1995, 2011,
+  Copyright (C) 1995, 2021,
   Trustees of Columbia University in the City of New York.
   All rights reserved.
 
@@ -46,6 +46,7 @@
 #include "kermit.h"	/* Kermit symbols and data structures */
 #ifdef __linux
 #include <errno.h>
+#include <stdlib.h>
 #endif /* __linux */
 
 /*
@@ -316,11 +317,6 @@ main(int argc, char ** argv) {
     if (!action)			/* Nothing to do, give usage message */
       usage();
 
-#ifdef DEBUG
-    debug(DB_LOG,"SIMULATED ERROR RATE:",0,errorrate);
-    if (errorrate) srand(seed);		/* Init random error generator */
-#endif /* DEBUG */
-
 /* THE REAL STUFF IS FROM HERE DOWN */
 
     if (!devopen("dummy"))		/* Open the communication device */
@@ -331,6 +327,8 @@ main(int argc, char ** argv) {
       debug(DB_OPN,"debug.log",0,0);
 
     debug(DB_MSG,"Initializing...",0,0);
+    debug(DB_LOG,"SIMULATED ERROR RATE:",0,errorrate);
+    if (errorrate) srand(seed);		/* Init random error generator */
 
 /*  Fill in parameters for this run */
 
